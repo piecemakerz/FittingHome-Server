@@ -1,0 +1,33 @@
+<html>
+  <head>
+    {% if title %}
+    <title>{{ title }} - Fitting Home</title>
+    {% else %}
+    <title>Fitting Home Admin Console</title>
+    {% endif %}
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static',
+    filename='css/style.css')}}"
+    />
+  </head>
+  <body>
+    <div>
+      Menu:
+      <a href="{{ url_for('index') }}">Home</a>
+      <a href="{{ url_for('render_process') }}">Process</a>
+      <a href="{{ url_for('render_user') }}">User</a>
+      <a href="{{ url_for('render_model') }}">Model</a>
+
+      {% if current_user.is_anonymous %}
+      <a href="{{ url_for('login') }}">Login</a>
+      {% else %}
+      <a href="{{ url_for('logout') }}">Logout</a>
+      {% endif %}
+    </div>
+    <main>
+      {% block content %}{% endblock %}
+    </main>
+    <script type="text/javascript" src="./static/js/buttonControll.js"></script>
+  </body>
+</html>

@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+<style>
+  section {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(5, 1fr);
+  }
+</style>
+{% block content %}
+<h1>All Processes</h1>
+<table id="processes">
+  <th>Process Id</th>
+  <th>User Id</th>
+  <th>File Name</th>
+  <th>PID</th>
+  <th>Step</th>
+  <th>Status</th>
+  <th>Started At</th>
+  <!-- <th>Delete</th> -->
+  {% for process in processes %}
+  <tr class="row">
+    <td class="processId">{{process._id}}</td>
+    <td class="userId">{{process.userId}}</td>
+    <td class="fileName">{{process.fileName}}</td>
+    <td class="pid">{{process.pid}}</td>
+    <td class="step">{{process.step}}</td>
+    <td class="status">{{process.status}}</td>
+    <td class="date">{{process.date}}</td>
+    <!-- <td>
+      <button>X</button>
+    </td> -->
+  </tr>
+
+  {% endfor %}
+</table>
+{% endblock %}

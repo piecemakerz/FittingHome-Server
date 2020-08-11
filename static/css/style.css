@@ -1,0 +1,39 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+table {
+  margin: 10px;
+  width: 1500px;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 0px 10px;
+  border: 1px solid black;
+}
+
+th {
+  height: 50px;
+  text-align: center;
+}
+
+tr {
+  height: 40px;
+  text-align: center;
+}
+
+button {
+  all: unset;
+  cursor: pointer;
+  color: red;
+  font-size: 20px;
+  font-weight: 600;
+}

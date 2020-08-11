@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+<style>
+  section {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(5, 1fr);
+  }
+</style>
+{% block content %}
+<h1>All Models</h1>
+<table id="models">
+  <th>User Id</th>
+  <th>Model Name</th>
+  <th>Model Location</th>
+  <th>Upload Date</th>
+  {% for model in models %}
+  <tr class="row">
+    <td class="userId">{{model.user}}</td>
+    <td class="modelName">{{model.modelName}}</td>
+    <td class="modelLocation">{{model.modelLocation}}</td>
+    <td class="uploadDate">{{model.uploadDate}}</span>
+  </tr>
+  {% endfor %}
+</table>
+{% endblock %}

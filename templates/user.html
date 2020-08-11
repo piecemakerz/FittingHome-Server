@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+<style>
+  section {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(4, 1fr);
+  }
+</style>
+
+{% block content %}
+<h1>All Users</h1>
+<table id="usrs">
+  <th>User Id</th>
+  <th>Name</th>
+  <th>Email</th>
+  <th>Google Id</th>
+  <th>Github Id</th>
+  <th>Device Token</th>
+  <th>Posts Count</th>
+  <th>Models Count</th>
+  {% for user in users %}
+  <tr class="row">
+    <td class="userId">{{user._id}}</td>
+    <td class="name">{{user.name}}</td>
+    <td class="email">{{user.email}}</td>
+    <td class="googleId">{{user.googleId}}</td>
+    <td class="githubId">{{user.githubId}}</td>
+    <td class="deviceToken">{{user.deviceToken}}</td>
+    <td class="postsLength">{{(user.posts)|length}}</td>
+    <td class="modelsLength">{{(user.models)|length}}</td>
+  </tr>
+  {% endfor %}
+</table>
+{% endblock %}
